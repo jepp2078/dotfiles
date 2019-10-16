@@ -1,16 +1,15 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+#export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # Add `the following to the `$PATH`
+export PATH="/snap/bin/:$PATH";
+export PATH="$HOME/.local/bin:$PATH";
 export PATH="$HOME/go/bin:$PATH";
-export PATH="$PATH:$HOME/.linkerd2/bin";
-export PATH="$HOME/.yarn/bin:$PATH";
 export MSBuildSDKsPath="/usr/share/dotnet/sdk/$(dotnet --version)/Sdks"
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/usr/local/azuredatastudio-linux-x64
+export GOPATH=$HOME/go
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
