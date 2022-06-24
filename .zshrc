@@ -8,8 +8,12 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="/snap/bin/:$PATH";
 export PATH="$HOME/.local/bin:$PATH";
 export PATH="$HOME/go/bin:$PATH";
-export MSBuildSDKsPath="/usr/share/dotnet/sdk/$(dotnet --version)/Sdks"
 export GOPATH=$HOME/go
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH/usr/local/lib/
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$(yarn global bin):$PATH"
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -18,6 +22,9 @@ for file in ~/.{path,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
+
+#Flux completions
+command -v flux >/dev/null && . <(flux completion zsh) && compdef _flux flux
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/usr/local/google-cloud-sdk/path.bash.inc' ]; then . '/usr/local/google-cloud-sdk/path.bash.inc'; fi
@@ -66,7 +73,7 @@ HYPHEN_INSENSITIVE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
