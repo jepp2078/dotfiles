@@ -11,6 +11,9 @@ alias -- -="cd -"
 # Shortcuts
 alias p="cd ~/projects"
 alias g="git"
+alias g="git"
+alias gmv="go mod vendor"
+alias gmt="go mod tidy"
 
 # List all files colorized in long format
 alias l="ls -lF ${colorflag}"
@@ -48,7 +51,7 @@ alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'
 alias c="tr -d '\n' | pbcopy"
 
 # URL-encode strings
-alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+alias urlencode='python3 -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
 # Intuitive map function
 # For example, to list all directories that contain a certain file:
